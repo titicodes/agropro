@@ -1,0 +1,12 @@
+class AppImages {
+  static const logo = 'assets/images/logo.png';
+  static const onboard1 = 'assets/images/hrt1c.jpg';
+  static const onboard2 = 'assets/images/hrt2.jpg';
+  static const inputprefix = 'assets/images/inputprefix.png';
+  static const notifications = 'assets/images/notification.png';
+  static const bgplant = 'assets/images/bgplant.png';
+  static const google = 'assets/images/google.png';
+  static const facebook = 'assets/images/facebook.png';
+  static const takesnapshot = 'assets/images/takeasnapshot.png';
+  static const smapshot = 'assets/images/snapshot.png';
+}
