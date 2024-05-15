@@ -1,5 +1,4 @@
-import 'package:agropro/pages/base/search/search_vm.dart';
-import 'package:agropro/utils/app_buttons.dart';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
@@ -9,29 +8,11 @@ import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
-class CameraScreen extends StatelessWidget {
-  CameraScreen({Key? key}) : super(key: key);
+class Camera extends StatelessWidget {
+  Camera({Key? key}) : super(key: key);
 
   late final TextEditingController searchController = TextEditingController();
   bool showResults = false;
-  List<String> status = [
-    'Done',
-    'Done',
-    'Pending',
-    'Pending',
-    'Pending',
-    'Pending',
-    'Pending'
-  ];
-  List<Color> statusColor = [
-    AppColor.green,
-    AppColor.green,
-    AppColor.warningColor,
-    AppColor.warningColor,
-    AppColor.warningColor,
-    AppColor.warningColor,
-    AppColor.warningColor
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,111 +22,18 @@ class CameraScreen extends StatelessWidget {
         backgroundColor: AppColor.background,
         body: SingleChildScrollView(
           child: Form(
-            child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 20,
-                  top: 40,
+            child: Stack(
+              children: [
+                Container(height: MediaQuery.of(context).size.height, width: MediaQuery.of(context).size.height,
+                  child: Image.asset(
+                    AppImages.demosnapshot, fit: BoxFit.cover,
+                    height: 94,
+                  ),
                 ),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: AppInputField(
-                              prefixIcon: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    AppImages.inputprefix,
-                                    height: 24,
-                                  ),
-                                ],
-                              ),
-                              controller: searchController,
-                              hintText: 'Search plant by name',
-                            ),
-                          ),
-                          Stack(
-                            children: [
-                              Image.asset(
-                                AppImages.bgplant,
-                                height: 94,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Gap(20),
-                                    InkWell(
-                                      onTap: () {},
-                                      child: CircleAvatar(
-                                        backgroundColor: AppColor.white,
-                                        radius: 20,
-                                        child: Image.asset(
-                                          AppImages.notifications,
-                                          height: 24,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                      Center(
-                        child: AppButton(
-                          title: 'ok',
-                          onPressed: () {
-                            showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                      titlePadding:
-                                          const EdgeInsets.symmetric(horizontal: 2),
-                                          shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0)),
-                    insetPadding: const EdgeInsets.symmetric(horizontal: 10),
-                                          
-                                      title: Container(
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8)),
-                                          child: Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 15),
-                                            child: Column(children: [
-                                              const Gap(20),
-                                              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                children: [
-                                                  const AppText(
-                                                    'Complete identification',
-                                                    size: 12,
-                                                    isBold: true,
-                                                  ),
-                                                ],
-                                              ),
-                                              const Gap(10),
-                                              Container(height: 145, width: 300,child: Image.asset(AppImages.plantrect, fit: BoxFit.cover,)),
-                                              Gap(15),
-                                              const AppText(
-                                                'Please wait for a few minute after submission for the\nresults', size: 11,
-                                                 align: TextAlign.center,
-                                              ),
-                                              const Gap(20),
-                                              AppButton(title: 'Identify', onPressed: (){}, width: 205,),
-                                              const Gap(20),
-                                              InkWell(onTap: (){},child: const Row(mainAxisAlignment: MainAxisAlignment.center,children: [AppText('Save and Identify later',size: 12, color: AppColor.green,), Icon(Icons.arrow_forward_ios_rounded, color: AppColor.green,size: 12,)],)), const Gap(20)
-                                            ]),
-                                          )),
-                                    ));
-                          },
-                          width: 100,
-                        ),
-                      )
-                    ])),
+                Column(mainAxisAlignment: MainAxisAlignment.spaceAround,children: [Container(width: MediaQuery.of(context).size.width,height: 132,decoration: BoxDecoration(color: AppColor.green),), Container(width: MediaQuery.of(context).size.width,height: 132, decoration: BoxDecoration(color: AppColor.background),)],)
+             
+              ],
+            ),
           ),
         ),
       ),
