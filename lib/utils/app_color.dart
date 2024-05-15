@@ -17,6 +17,7 @@ class AppColor {
   static const Color deepGreen = Color(0xFF599742);
   static const Color red = Color.fromARGB(255, 204, 24, 11);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
+  static const Color transparent = Colors.transparent;
 
   static const Color grey = Color(0xFF818181);
   static const warningColor = Color(0xFFFFA500);
