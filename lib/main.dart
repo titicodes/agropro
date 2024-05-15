@@ -1,5 +1,6 @@
 
 import 'package:agropro/pages/base/search/camera.dart';
+import 'package:agropro/pages/base/search/plant_identification';
 import 'package:agropro/pages/base/search/plant_identified2.dart';
 import 'package:agropro/pages/base/search/search.dart';
 import 'package:agropro/pages/base/search/search_results.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
       
-      home:  PlantIdentified2(),
+      home:  Search(),
     );
   }
 }

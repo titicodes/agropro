@@ -18,6 +18,12 @@ class PlantIdentified2 extends StatelessWidget {
     ' Sun Exposure',
     'Soil Type'
   ];
+  List<String> srcrestxt = [
+    'Annual',
+    '75 days',
+    'Full sun',
+    'Loamy, well drained ',
+  ];
   List<String> srchresimgs = [
     AppImages.tomat1,
     AppImages.tomat2,
@@ -71,10 +77,13 @@ class PlantIdentified2 extends StatelessWidget {
                                       padding: const EdgeInsets.only(left: 8),
                                       child: Row(
                                         children: [
-                                          AppText(
-                                            srchcategories[index],
-                                            weight: FontWeight.w500,
-                                          )
+                                          Container(width: 150,
+                                            child: AppText(
+                                              srchcategories[index],
+                                              weight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Container(child: AppText(srcrestxt[index]))
                                         ],
                                       ),
                                     ),
@@ -90,10 +99,13 @@ class PlantIdentified2 extends StatelessWidget {
                                       padding: const EdgeInsets.only(left: 8),
                                       child: Row(
                                         children: [
-                                          AppText(
-                                            srchcategories[index],
-                                            weight: FontWeight.w500,
-                                          )
+                                          Container(width: 150,
+                                            child: AppText(
+                                              srchcategories[index],
+                                              weight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Container(alignment: const Alignment(173, 0),child: AppText(srcrestxt[index]))
                                         ],
                                       ),
                                     ),
@@ -101,17 +113,23 @@ class PlantIdentified2 extends StatelessWidget {
                                 }
                               }),
                             ),
-                            const AppText(
-                              'Description',
-                              isBold: true,
-                              size: 16,
+                            Gap(20),
+                            const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                AppText(
+                                  'Description',
+                                  isBold: true,
+                                  size: 16,
+                                ),
+                              ],
                             ),
-                            AppText(
+                            Gap(10),
+                            const AppText(
                               'Roma tomatoes are egg- or pear-shaped and red when fully ripe. They have few seeds and are a good canning and sauce tomato. While Roma is an open-pollinated variety, in general it is not considered an heirloom tomato. Maturing in under three months, the plant itself grows to 1 metre (39 inches) in height and the single fruit weighs about 60 grams (2.1 ounces).[4] The vines fruit heavily, making Roma a popular variety with gardeners who do a lot of home canning.',
                               size: 12,
                               weight: FontWeight.w400,
                             ),
-                            Gap(15),
+                            const Gap(15),
                             SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
@@ -130,22 +148,24 @@ class PlantIdentified2 extends StatelessWidget {
                                             ),
                                           )),
                                 )),
-                            Gap(15),
+                            const Gap(15),
                             Row(
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(right: 20),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        AppImages.camera,
-                                        height: 24,
-                                      ),
-                                      AppText(
-                                        'New',
-                                        size: 11,
-                                      )
-                                    ],
+                                  child: InkWell(onTap: (){},
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          AppImages.camera,
+                                          height: 24,
+                                        ),
+                                        const AppText(
+                                          'New',
+                                          size: 11,
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 AppButton(
