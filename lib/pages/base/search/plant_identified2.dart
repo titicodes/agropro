@@ -1,16 +1,21 @@
+import 'dart:io';
+
 import 'package:agropro/pages/base/search/search_vm.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
 class PlantIdentified2 extends StatelessWidget {
   PlantIdentified2({Key? key}) : super(key: key);
 
+  File? image;
   late final TextEditingController searchController = TextEditingController();
   List<String> srchcategories = [
     'Plant type',
@@ -30,7 +35,7 @@ class PlantIdentified2 extends StatelessWidget {
     AppImages.tomat2,
     AppImages.tomat4
   ];
-
+ 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -77,13 +82,15 @@ class PlantIdentified2 extends StatelessWidget {
                                       padding: const EdgeInsets.only(left: 8),
                                       child: Row(
                                         children: [
-                                          Container(width: 150,
+                                          Container(
+                                            width: 150,
                                             child: AppText(
                                               srchcategories[index],
                                               weight: FontWeight.w500,
                                             ),
                                           ),
-                                          Container(child: AppText(srcrestxt[index]))
+                                          Container(
+                                              child: AppText(srcrestxt[index]))
                                         ],
                                       ),
                                     ),
@@ -99,13 +106,17 @@ class PlantIdentified2 extends StatelessWidget {
                                       padding: const EdgeInsets.only(left: 8),
                                       child: Row(
                                         children: [
-                                          Container(width: 150,
+                                          Container(
+                                            width: 150,
                                             child: AppText(
                                               srchcategories[index],
                                               weight: FontWeight.w500,
                                             ),
                                           ),
-                                          Container(alignment: const Alignment(173, 0),child: AppText(srcrestxt[index]))
+                                          Container(
+                                              alignment:
+                                                  const Alignment(173, 0),
+                                              child: AppText(srcrestxt[index]))
                                         ],
                                       ),
                                     ),
@@ -114,7 +125,8 @@ class PlantIdentified2 extends StatelessWidget {
                               }),
                             ),
                             Gap(20),
-                            const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 AppText(
                                   'Description',
@@ -153,7 +165,8 @@ class PlantIdentified2 extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(right: 20),
-                                  child: InkWell(onTap: (){},
+                                  child: InkWell(
+                                    onTap: () {pi},
                                     child: Column(
                                       children: [
                                         Image.asset(
@@ -170,7 +183,9 @@ class PlantIdentified2 extends StatelessWidget {
                                 ),
                                 AppButton(
                                   title: 'Add to My Farm',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                   
+                                  },
                                   width: 250,
                                 )
                               ],
