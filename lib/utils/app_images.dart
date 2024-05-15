@@ -9,4 +9,11 @@ class AppImages {
   static const facebook = 'assets/images/facebook.png';
   static const takesnapshot = 'assets/images/takeasnapshot.png';
   static const smapshot = 'assets/images/snapshot.png';
+  static const plantrect = 'assets/images/plantrectangle.png';
+  static const demosnapshot = 'assets/images/demoSnapshot.png';
+  static const tomat1 = 'assets/images/tomat1.png';
+  static const tomat2 = 'assets/images/tomat2.png';
+  static const tomat3 = 'assets/images/tomat3.png';
+  static const tomat4 = 'assets/images/tomat4.png';
+  static const camera = 'assets/images/camera.png';
 }

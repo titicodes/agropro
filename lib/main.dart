@@ -1,5 +1,8 @@
 
+import 'package:agropro/pages/base/search/camera.dart';
+import 'package:agropro/pages/base/search/plant_identified2.dart';
 import 'package:agropro/pages/base/search/search.dart';
+import 'package:agropro/pages/base/search/search_results.dart';
 
 
 import 'package:agropro/utils/app_text.dart';
@@ -15,21 +18,21 @@ import 'firebase_options.dart';
 import 'locator.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
+   WidgetsFlutterBinding.ensureInitialized();
 
  // initialise firebase
-    // await Firebase.initializeApp(
-    //   options: DefaultFirebaseOptions.currentPlatform,
-    // );
+     await Firebase.initializeApp(
+       options: DefaultFirebaseOptions.currentPlatform,
+     );
 
   //initialise local storage
-    // await GetStorage.init();
+     await GetStorage.init();
 
   //setup different deployment environment
  
 
   //setup dependency injector
-  //  setupLocator();
+    setupLocator();
 
   runApp(const MyApp());
 }
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
       
-      home:  Search(),
+      home:  PlantIdentified2(),
     );
   }
 }
