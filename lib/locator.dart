@@ -1,4 +1,3 @@
-
 import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -13,6 +12,7 @@ void setupLocator() {
 
   // Services
   getIt.registerLazySingleton<NavigationService>(() => NavigationService());
+  getIt.registerFactory<SearchViewModel>(() => SearchViewModel());
 }
 
 void setupDio() {
@@ -31,4 +31,3 @@ void setupDio() {
     return dio;
   });
 }
-
