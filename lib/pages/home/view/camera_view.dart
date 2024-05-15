@@ -1,5 +1,6 @@
 import 'package:agropro/pages/home/viewmodel/camera_model.dart';
 import 'package:flutter/material.dart';
+import 'package:camera_web/camera_web.dart';
 
 class CamerapageWidget extends StatefulWidget {
   const CamerapageWidget({super.key});
