@@ -1,5 +1,3 @@
-import 'package:agropro/pages/base/search/camera.dart';
-import 'package:agropro/pages/base/search/search.dart';
 import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
@@ -44,165 +42,110 @@ class CameraScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Form(
             child: Padding(
-              padding: const EdgeInsets.only(
-                left: 20,
-                top: 40,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  top: 40,
+                ),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: AppInputField(
-                          prefixIcon: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: AppInputField(
+                              prefixIcon: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    AppImages.inputprefix,
+                                    height: 24,
+                                  ),
+                                ],
+                              ),
+                              controller: searchController,
+                              hintText: 'Search plant by name',
+                            ),
+                          ),
+                          Stack(
                             children: [
                               Image.asset(
-                                AppImages.inputprefix,
-                                height: 24,
+                                AppImages.bgplant,
+                                height: 94,
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Gap(20),
+                                    InkWell(
+                                      onTap: () {},
+                                      child: CircleAvatar(
+                                        backgroundColor: AppColor.white,
+                                        radius: 20,
+                                        child: Image.asset(
+                                          AppImages.notifications,
+                                          height: 24,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
-                          controller: searchController,
-                          hintText: 'Search plant by name',
-                        ),
-                      ),
-                      Stack(
-                        children: [
-                          Image.asset(
-                            AppImages.bgplant,
-                            height: 94,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Gap(20),
-                                InkWell(
-                                  onTap: () {},
-                                  child: CircleAvatar(
-                                    backgroundColor: AppColor.white,
-                                    radius: 20,
-                                    child: Image.asset(
-                                      AppImages.notifications,
-                                      height: 24,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          )
                         ],
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          showResults = true;
-                        },
-                        child: const AppText(
-                          'Previous results',
-                          size: 12,
-                          color: AppColor.green,
-                        ),
-                      ),
-                      const Icon(
-                        Icons.arrow_forward_ios,
-                        size: 12,
-                        color: AppColor.green,
-                      ),
-                    ],
-                  ),
-                  const Gap(5),
-                  Padding(
-                      padding: const EdgeInsets.only(right: 20),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: AppColor.white),
-                        height: 602,
-                        width: MediaQuery.of(context).size.width,
-                        child: Column(
-                          children: [
-                            Column(
-                              children: List.generate(
-                                7,
-                                (index) => Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 27, vertical: 10),
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        border: Border(
-                                            bottom: BorderSide(
-                                                color: AppColor.grey)),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          const Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              AppText(
-                                                'Tomatoes',
-                                                size: 14,
-                                                weight: FontWeight.w600,
-                                                color: AppColor.textColor,
+                      Center(
+                        child: AppButton(
+                          title: 'ok',
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                      titlePadding:
+                                          const EdgeInsets.symmetric(horizontal: 2),
+                                          shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0)),
+                    insetPadding: const EdgeInsets.symmetric(horizontal: 10),
+                                          
+                                      title: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 15),
+                                            child: Column(children: [
+                                              const Gap(20),
+                                              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  const AppText(
+                                                    'Complete identification',
+                                                    size: 12,
+                                                    isBold: true,
+                                                  ),
+                                                ],
                                               ),
-                                              AppText(
-                                                '10:24 am',
-                                                color: AppColor.textColor,
-                                                size: 12,
-                                              )
-                                            ],
-                                          ),
-                                          InkWell(
-                                            onTap: () {},
-                                            child: Row(
-                                              children: [
-                                                AppText(
-                                                  status[index],
-                                                  color: statusColor[index],
-                                                  weight: FontWeight.w600,
-                                                  size: 12,
-                                                ),
-                                                const Icon(
-                                                  Icons.arrow_right_rounded,
-                                                  size: 24,
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )),
-                              ),
-                            ),
-                            const Gap(10),
-                            const AppText(
-                                'click here to take a photo of the plant'),
-                            const Gap(10),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 27, vertical: 10),
-                              child: AppButton(
-                                  title: 'Take snapshot',
-                                  onPressed: () {
-                                    navigationService
-                                        .navigateToWidget(Search());
-                                  }),
-                            )
-                          ],
+                                              const Gap(10),
+                                              Container(height: 145, width: 300,child: Image.asset(AppImages.plantrect, fit: BoxFit.cover,)),
+                                              Gap(15),
+                                              const AppText(
+                                                'Please wait for a few minute after submission for the\nresults', size: 11,
+                                                 align: TextAlign.center,
+                                              ),
+                                              const Gap(20),
+                                              AppButton(title: 'Identify', onPressed: (){}, width: 205,),
+                                              const Gap(20),
+                                              InkWell(onTap: (){},child: const Row(mainAxisAlignment: MainAxisAlignment.center,children: [AppText('Save and Identify later',size: 12, color: AppColor.green,), Icon(Icons.arrow_forward_ios_rounded, color: AppColor.green,size: 12,)],)), const Gap(20)
+                                            ]),
+                                          )),
+                                    ));
+                          },
+                          width: 100,
                         ),
-                      ))
-                ],
-              ),
-            ),
+                      )
+                    ])),
           ),
         ),
       ),

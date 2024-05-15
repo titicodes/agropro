@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
       
-      home:  PlantIdentified2(),
+      home:  CameraScreen(),
     );
   }
 }
