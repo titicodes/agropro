@@ -18,6 +18,12 @@ class PlantIdentified2 extends StatelessWidget {
     ' Sun Exposure',
     'Soil Type'
   ];
+  List<String> srcrestxt = [
+    'Annual',
+    '75 days',
+    'Full sun',
+    'Loamy, well drained ',
+  ];
   List<String> srchresimgs = [
     AppImages.tomat1,
     AppImages.tomat2,
@@ -74,7 +80,8 @@ class PlantIdentified2 extends StatelessWidget {
                                           AppText(
                                             srchcategories[index],
                                             weight: FontWeight.w500,
-                                          )
+                                          ),
+                                          Center(child: AppText(srcrestxt[index]))
                                         ],
                                       ),
                                     ),
@@ -93,7 +100,8 @@ class PlantIdentified2 extends StatelessWidget {
                                           AppText(
                                             srchcategories[index],
                                             weight: FontWeight.w500,
-                                          )
+                                          ),
+                                          Center(child: AppText(srcrestxt[index]))
                                         ],
                                       ),
                                     ),
@@ -135,17 +143,19 @@ class PlantIdentified2 extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(right: 20),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        AppImages.camera,
-                                        height: 24,
-                                      ),
-                                      AppText(
-                                        'New',
-                                        size: 11,
-                                      )
-                                    ],
+                                  child: InkWell(onTap: (){},
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          AppImages.camera,
+                                          height: 24,
+                                        ),
+                                        AppText(
+                                          'New',
+                                          size: 11,
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 AppButton(

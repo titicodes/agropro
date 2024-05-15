@@ -60,7 +60,9 @@ class PlantIdentification extends StatelessWidget {
                               color: AppColor.deepGreen,
                               size: 20,
                             ),
+                            
                             const Gap(10),
+                            
                             Column(
                               children: List.generate(4, (index) {
                                 if (index % 2 == 1) {
