@@ -1,4 +1,5 @@
 
+import 'package:agropro/pages/base/search/diagnose/disease_diagnosed.dart';
 import 'package:agropro/pages/base/search/diagnose/see_more.dart';
 
 
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
       
-      home:  SeeMore(),
+      home:  DiseaseDiagnosed(),
     );
   }
 }
