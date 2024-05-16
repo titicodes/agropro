@@ -18,20 +18,18 @@ class DiseaseDiagnosed extends StatelessWidget {
   List<String> srchcategories = [
     'Plant name',
     'Disease detected',
-   
   ];
   List<String> srcrestxt = [
     'Roma tomatoes',
     'Curly top',
-    
   ];
   List<String> srchresimgs = [
-    AppImages.tomat1,
-    AppImages.tomat2,
-    AppImages.tomat2,
-    AppImages.tomat4
+    AppImages.photodis1,
+    AppImages.photodis2,
+    AppImages.photodis3,
+    AppImages.photodis4
   ];
- 
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -43,7 +41,9 @@ class DiseaseDiagnosed extends StatelessWidget {
               children: [
                 Container(
                   child: Image.asset(
-                    AppImages.plantrect, height: 226,fit: BoxFit.cover,
+                    AppImages.plantrect2,
+                    height: 226,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Column(
@@ -72,35 +72,34 @@ class DiseaseDiagnosed extends StatelessWidget {
                             const Gap(10),
                             Column(
                               children: List.generate(2, (index) {
-                                return   Padding(
+                                return Padding(
                                   padding: const EdgeInsets.only(bottom: 5),
                                   child: Container(
-                                      height: 38,
-                                      width: MediaQuery.of(context).size.width,
-                                      decoration: BoxDecoration(
-                                          color: AppColor.lightGreen,
-                                          borderRadius: BorderRadius.circular(4)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 8),
-                                        child: Row(
-                                          children: [
-                                            Container(
-                                              width: 150,
-                                              child: AppText(
-                                                srchcategories[index],
-                                                weight: FontWeight.w500,
-                                              ),
+                                    height: 38,
+                                    width: MediaQuery.of(context).size.width,
+                                    decoration: BoxDecoration(
+                                        color: AppColor.lightGreen,
+                                        borderRadius: BorderRadius.circular(4)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 8),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 150,
+                                            child: AppText(
+                                              srchcategories[index],
+                                              weight: FontWeight.w500,
                                             ),
-                                            Container(
-                                                alignment:
-                                                    const Alignment(173, 0),
-                                                child: AppText(srcrestxt[index]))
-                                          ],
-                                        ),
+                                          ),
+                                          Container(
+                                              alignment:
+                                                  const Alignment(173, 0),
+                                              child: AppText(srcrestxt[index]))
+                                        ],
                                       ),
                                     ),
+                                  ),
                                 );
-                              
                               }),
                             ),
                             Gap(20),
@@ -116,12 +115,16 @@ class DiseaseDiagnosed extends StatelessWidget {
                             ),
                             Gap(10),
                             const AppText(
-                              'Roma tomatoes are egg- or pear-shaped and red when fully ripe. They have few seeds and are a good canning and sauce tomato. While Roma is an open-pollinated variety, in general it is not considered an heirloom tomato. Maturing in under three months, the plant itself grows to 1 metre (39 inches) in height and the single fruit weighs about 60 grams (2.1 ounces).[4] The vines fruit heavily, making Roma a popular variety with gardeners who do a lot of home canning.',
+                              'Curly top is a viral disease that affects many crops. This disease causes plants to become smaller in size, have shriveled petals and leaves, and are twisted and pulled out of shape. They are often caused by curtoviruses (genus Curtovirus), members of the virus family Geminiviridae. ',
                               size: 12,
                               weight: FontWeight.w400,
                             ),
                             const Gap(15),
-                            AppText('Photo Disease'),
+                            AppText(
+                              'Photo Disease',
+                              size: 16,
+                              isBold: true,
+                            ),
                             SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
@@ -141,35 +144,15 @@ class DiseaseDiagnosed extends StatelessWidget {
                                           )),
                                 )),
                             const Gap(15),
-                            AppText('Possible cure', size: 16, isBold: true,),
+                            AppText(
+                              'Possible cure',
+                              size: 16,
+                              isBold: true,
+                            ),
                             Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 20),
-                                  child: InkWell(
-                                    onTap: () {},
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          AppImages.camera,
-                                          height: 24,
-                                        ),
-                                        const AppText(
-                                          'New',
-                                          size: 11,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                AppButton(
-                                  title: 'Add to My Farm',
-                                  onPressed: () {
-                                   
-                                  },
-                                  width: 250,
-                                )
-                              ],
+                              children: List.generate(3, (index) {
+                                return CircleAvatar(radius: 46,);
+                              }),
                             )
                           ],
                         ),
