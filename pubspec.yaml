@@ -33,6 +33,7 @@ dependencies:
 
   image_picker: ^1.1.1
   permission_handler: ^11.3.1
+  rolling_bottom_bar: ^0.2.2
 
 
 dev_dependencies:
