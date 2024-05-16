@@ -166,7 +166,7 @@ class PlantIdentified2 extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(right: 20),
                                   child: InkWell(
-                                    onTap: () {pi},
+                                    onTap: () {},
                                     child: Column(
                                       children: [
                                         Image.asset(

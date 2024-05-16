@@ -31,7 +31,7 @@ class Search extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  PlantIdentification()));
+                                                  Search()));
                                                                               showDialog(
                                 context: context,
                                 builder: (context) => AlertDialog(
