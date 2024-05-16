@@ -1,14 +1,12 @@
 import 'dart:io';
 
 import 'package:agropro/pages/base/search/search_vm.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
@@ -45,8 +43,10 @@ class PlantIdentified2 extends StatelessWidget {
           child: Form(
             child: Stack(
               children: [
-                Image.asset(
-                  AppImages.plantrect,
+                Container(
+                  child: Image.asset(
+                    AppImages.plantrect, height: 226,fit: BoxFit.cover,
+                  ),
                 ),
                 Column(
                   children: [

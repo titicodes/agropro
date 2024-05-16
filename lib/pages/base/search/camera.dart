@@ -47,7 +47,7 @@ class Camera extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       height: 182,
                       decoration: BoxDecoration(
-                          color: AppColor.transparent.withOpacity(.75)),child: Row(children: [],),
+                          color: AppColor.transparent.withOpacity(.75)),child: Row(children: [],), 
                     )
                   ],
                 )

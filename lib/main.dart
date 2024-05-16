@@ -1,20 +1,13 @@
 
-import 'package:agropro/pages/base/search/camera.dart';
-import 'package:agropro/pages/base/search/plant_identification';
-import 'package:agropro/pages/base/search/plant_identified2.dart';
-import 'package:agropro/pages/base/search/search.dart';
-import 'package:agropro/pages/base/search/search_results.dart';
+import 'package:agropro/pages/base/search/diagnose/see_more.dart';
 
 
 import 'package:agropro/utils/app_text.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:oktoast/oktoast.dart';
 
 
-import 'data/services/navigation_service.dart';
 import 'firebase_options.dart';
 import 'locator.dart';
 
@@ -50,7 +43,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
       
-      home:  PlantIdentified2(),
+      home:  SeeMore(),
     );
   }
 }
