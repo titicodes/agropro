@@ -4,6 +4,7 @@ import 'package:agropro/pages/base/search/diagnose/see_more.dart';
 
 
 import 'package:agropro/utils/app_text.dart';
+import 'package:agropro/utils/main_nav.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
       
-      home:  DiseaseDiagnosed(),
+      home:  MainNva(),
     );
   }
 }
