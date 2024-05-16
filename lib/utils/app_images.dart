@@ -31,4 +31,5 @@ class AppImages {
   static const insectcontrol = 'assets/images/insectcontrol.png';
   static const fungicides = 'assets/images/fungicides.png';
   static const plantrect2 = 'assets/images/plantrect2.png';
+  static const cleantool = 'assets/images/cleantools.png';
 }

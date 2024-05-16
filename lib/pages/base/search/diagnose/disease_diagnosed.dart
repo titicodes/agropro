@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:agropro/pages/base/search/search_vm.dart';
-import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
@@ -40,11 +39,10 @@ class DiseaseDiagnosed extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  child: Image.asset(
-                    AppImages.plantrect2,
-                    height: 226,
-                    fit: BoxFit.cover,
-                  ),
+                  child: Image.asset(AppImages.plantrect2,
+                      height: 226,
+                      fit: BoxFit.cover,
+                      width: MediaQuery.of(context).size.width),
                 ),
                 Column(
                   children: [
@@ -69,6 +67,9 @@ class DiseaseDiagnosed extends StatelessWidget {
                               color: AppColor.deepGreen,
                               size: 20,
                             ),
+                            const Gap(10),
+                            const AppText(
+                                "The BLH has a piercing-sucking feeding habit; thus, the virus is spread or injected from the insect's salivary gland into its new host as the insect pierces and feeds on non-infected plants. Virus-infected plants cannot be treated and should be removed."),
                             const Gap(10),
                             Column(
                               children: List.generate(2, (index) {
@@ -102,7 +103,7 @@ class DiseaseDiagnosed extends StatelessWidget {
                                 );
                               }),
                             ),
-                            Gap(20),
+                            const Gap(20),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -113,14 +114,14 @@ class DiseaseDiagnosed extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Gap(10),
+                            const Gap(10),
                             const AppText(
                               'Curly top is a viral disease that affects many crops. This disease causes plants to become smaller in size, have shriveled petals and leaves, and are twisted and pulled out of shape. They are often caused by curtoviruses (genus Curtovirus), members of the virus family Geminiviridae. ',
                               size: 12,
                               weight: FontWeight.w400,
                             ),
                             const Gap(15),
-                            AppText(
+                            const AppText(
                               'Photo Disease',
                               size: 16,
                               isBold: true,
@@ -144,14 +145,16 @@ class DiseaseDiagnosed extends StatelessWidget {
                                           )),
                                 )),
                             const Gap(15),
-                            AppText(
+                            const AppText(
                               'Possible cure',
                               size: 16,
                               isBold: true,
                             ),
                             Row(
                               children: List.generate(3, (index) {
-                                return CircleAvatar(radius: 46,);
+                                return const CircleAvatar(
+                                  radius: 46,
+                                );
                               }),
                             )
                           ],
