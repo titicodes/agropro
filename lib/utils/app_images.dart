@@ -16,4 +16,18 @@ class AppImages {
   static const tomat3 = 'assets/images/tomat3.png';
   static const tomat4 = 'assets/images/tomat4.png';
   static const camera = 'assets/images/camera.png';
+  static const blight = 'assets/images/blight.png';
+  static const canker = 'assets/images/canker.png';
+  static const powderyMildew = 'assets/images/powderyMildew.png';
+  static const downyMildew = 'assets/images/downymildew.png';
+  static const abiotic = 'assets/images/blackSpot.png';
+  static const alternaria = 'assets/images/fungi.png';
+  static const fungi = 'assets/images/fungi.png';
+  static const blackSpot = 'assets/images/blackSpot.png';
+  static const photodis1 = 'assets/images/photodisease1.png';
+  static const photodis2 = 'assets/images/photodisease2.png';
+  static const photodis3 = 'assets/images/photodisease3.png';
+  static const photodis4 = 'assets/images/photodisease3.png';
+  static const insectcontrol = 'assets/images/insectcontrol.png';
+  static const fungicides = 'assets/images/fungicides.png';
 }

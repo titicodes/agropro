@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:agropro/pages/base/search/plant_identification';
 import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
