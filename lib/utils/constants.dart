@@ -33,6 +33,7 @@ class AppBottomSheet {
 
 class AppText extends StatelessWidget {
   final String? text;
+
   final bool isBold;
   final double size;
   final String fontFamily;
@@ -53,11 +54,12 @@ class AppText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text ?? '', // If text is null, use an empty string
-      textAlign: align,
-      style: GoogleFonts.montserrat(fontSize : size, fontWeight: isBold ? FontWeight.bold : weight, color: color)
-    );
+    return Text(text ?? '', // If text is null, use an empty string
+        textAlign: align,
+        style: GoogleFonts.montserrat(
+            fontSize: size,
+            fontWeight: isBold ? FontWeight.bold : weight,
+            color: color));
   }
 }
 
