@@ -5,6 +5,7 @@ import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
@@ -14,6 +15,7 @@ class ForumScreen extends StatelessWidget {
 
   late final TextEditingController searchController = TextEditingController();
   bool showResults = false;
+  List<String> aniimg = [AppImages.guava1, AppImages.guava2];
 
   @override
   Widget build(BuildContext context) {
@@ -50,26 +52,69 @@ class ForumScreen extends StatelessWidget {
                             width: MediaQuery.of(context).size.width,
                             height: 365,
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+                              padding:
+                                  const EdgeInsets.only(top: 20, bottom: 20),
                               child: Column(
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(left: 0),
                                     child: ListTile(
-                                      leading: Image.asset(AppImages.anietieid, height: 40),title: const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      leading: Image.asset(AppImages.anietieid,
+                                          height: 40),
+                                      title: const Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              AppText('Anietie Sampson', isBold: true, size: 12,),
-                                              AppText('Ikot Ekpene, AKS', size: 11,)
+                                              AppText(
+                                                'Anietie Sampson',
+                                                isBold: true,
+                                                size: 12,
+                                              ),
+                                              AppText(
+                                                'Ikot Ekpene, AKS',
+                                                size: 11,
+                                              )
                                             ],
                                           ),
-                                          AppText('17 mins', size: 11,)
+                                          AppText(
+                                            '17 mins',
+                                            size: 11,
+                                          )
                                         ],
                                       ),
                                     ),
                                   ),
-                                  const AppText('Today, I woke to find out that the guava trees in my farm were infested with these. Can someone help me?', weight: FontWeight.w500 ,size: 14,), 
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 10),
+                                    child: AppText(
+                                      'Today, I woke to find out that the guava trees in my farm were infested with these. Can someone help me?',
+                                      weight: FontWeight.w500,
+                                      size: 14,
+                                    ),
+                                  ),
+                                  const Gap(10),
+                                  Row(
+                                    children: List.generate(
+                                        2,
+                                        (index) => Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 7, right: 7),
+                                              child: Container(
+                                                height: 145,
+                                                width: 145,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8)),
+                                                child:
+                                                    Image.asset(aniimg[index]),
+                                              ),
+                                            )),
+                                  )
                                 ],
                               ),
                             ),
@@ -83,7 +128,74 @@ class ForumScreen extends StatelessWidget {
                                 color: AppColor.white,
                                 borderRadius: BorderRadius.circular(8)),
                             width: MediaQuery.of(context).size.width,
-                            height: 365, child: Padding(padding: EdgeInsets.only(left: 10, right: 10, top: 20), child: Column(),),
+                            height: 365,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 20, bottom: 20),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 0),
+                                    child: ListTile(
+                                      leading: Image.asset(AppImages.sandra,
+                                          height: 40),
+                                      title: const Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              AppText(
+                                                'Anietie Sampson',
+                                                isBold: true,
+                                                size: 12,
+                                              ),
+                                              AppText(
+                                                'Ikot Ekpene, AKS',
+                                                size: 11,
+                                              )
+                                            ],
+                                          ),
+                                          AppText(
+                                            '17 mins',
+                                            size: 11,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 10),
+                                    child: AppText(
+                                      'Despite the heavy downpour lately that has made my beds to be waterlogged, my waterleaves still came out healthy.',
+                                      weight: FontWeight.w500,
+                                      size: 14,
+                                    ),
+                                  ),
+                                  const Gap(10),
+                                  Row(
+                                    children: List.generate(
+                                        2,
+                                        (index) => Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 7, right: 7),
+                                              child: Container(
+                                                height: 145,
+                                                width: 145,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8)),
+                                                child:
+                                                    Image.asset(aniimg[index]),
+                                              ),
+                                            )),
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
                         );
                       }

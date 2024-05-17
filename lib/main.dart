@@ -1,5 +1,7 @@
 import 'package:agropro/pages/base/forum/forum_screen.dart';
 import 'package:agropro/pages/base/search/plant_identified2.dart';
+import 'package:agropro/pages/base/search/search.dart';
+import 'package:agropro/pages/base/search/search_results.dart';
 import 'package:agropro/utils/app_text.dart';
 import 'package:agropro/utils/main_nav.dart';
 import 'package:firebase_core/firebase_core.dart';

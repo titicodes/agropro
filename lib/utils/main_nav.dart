@@ -21,8 +21,8 @@ class MainNva extends StatelessWidget {
       body: PageView(
         controller: _pageControlller,
         children: [
+        ForumScreen(),
            Search(),
-          const SizedBox(),
           Search(),
           const DiseaseDiagnosView(),
           const SizedBox()

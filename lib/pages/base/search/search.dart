@@ -8,6 +8,7 @@ import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
 import 'package:agropro/utils/input.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -122,130 +123,136 @@ class Search extends StatelessWidget {
       create: (context) => SearchViewModel(), // Provide the view model
       child: Scaffold(
         backgroundColor: AppColor.background,
-        body: SingleChildScrollView(
-          child: Form(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 15,
-                top: 40,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: AppInputField(
-                          prefixIcon: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                AppImages.inputprefix,
-                                height: 24,
-                              ),
-                            ],
-                          ),
-                          controller: searchController,
-                          hintText: 'Search plant by name',
-                        ),
-                      ),
-                      Stack(
-                        children: [
-                          Image.asset(
-                            AppImages.bgplant,
-                            height: 94,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Gap(20),
-                                InkWell(
-                                  onTap: () {},
-                                  child: CircleAvatar(
-                                    backgroundColor: AppColor.white,
-                                    radius: 20,
-                                    child: Image.asset(
-                                      AppImages.notifications,
+        body: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Form(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 15,
+                      top: 40,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: AppInputField(
+                                prefixIcon: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      AppImages.inputprefix,
                                       height: 24,
                                     ),
-                                  ),
+                                  ],
                                 ),
+                                controller: searchController,
+                                hintText: 'Search plant by name',
+                              ),
+                            ),
+                            Stack(
+                              children: [
+                                Image.asset(
+                                  AppImages.bgplant,
+                                  height: 94,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Gap(20),
+                                      InkWell(
+                                        onTap: () {},
+                                        child: CircleAvatar(
+                                          backgroundColor: AppColor.white,
+                                          radius: 20,
+                                          child: Image.asset(
+                                            AppImages.notifications,
+                                            height: 24,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
                               ],
                             ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          showResults = true;
-                        },
-                        child: AppText(
-                          'Previous results',
-                          size: 12,
-                          color: AppColor.green,
+                          ],
                         ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: 12,
-                        color: AppColor.green,
-                      ),
-                    ],
-                  ),
-                  Gap(100),
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15),
-                        child: Center(
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Image.asset(
-                                AppImages.takesnapshot,
-                                height: 252,
+                        Row(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                showResults = true;
+                              },
+                              child: AppText(
+                                'Previous results',
+                                size: 12,
+                                color: AppColor.green,
                               ),
-                              Column(
-                                children: [
-                                  InkWell(
-                                    onTap: () async {
-                                      await requestCameraPermission();
-                                      await pickImage(context);
-                                    },
-                                    child: Image.asset(
-                                      AppImages.smapshot,
-                                      height: 85,
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 12,
+                              color: AppColor.green,
+                            ),
+                          ],
+                        ),
+                        Gap(100),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 15),
+                              child: Center(
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Image.asset(
+                                      AppImages.takesnapshot,
+                                      height: 252,
                                     ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Gap(10),
-                      InkWell(
-                        onTap: () {},
-                        child: Center(
-                          child: AppText(
-                            'Take snapshot',
-                            isBold: true,
-                            size: 18,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+                                    Column(
+                                      children: [
+                                        InkWell(
+                                          onTap: () async {
+                                            await requestCameraPermission();
+                                            await pickImage(context);
+                                          },
+                                          child: Image.asset(
+                                            AppImages.smapshot,
+                                            height: 85,
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Gap(10),
+                            InkWell(
+                              onTap: () {},
+                              child: Center(
+                                child: AppText(
+                                  'Take snapshot',
+                                  isBold: true,
+                                  size: 18,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
-          ),
+          ],
         ),
       ),
     );
