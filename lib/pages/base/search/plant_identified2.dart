@@ -45,7 +45,7 @@ class PlantIdentified2 extends StatelessWidget {
               children: [
                 Container(
                   child: Image.asset(
-                    AppImages.plantrect, height: 226,fit: BoxFit.cover,
+                    AppImages.plantrect, height: 226,fit: BoxFit.cover, width: MediaQuery.of(context).size.width,
                   ),
                 ),
                 Column(
@@ -196,6 +196,7 @@ class PlantIdentified2 extends StatelessWidget {
                     ),
                   ],
                 ),
+               const Positioned(top: 15, left: 10,child:  Icon(Icons.arrow_left_rounded, color: AppColor.lightGreen, size: 60,))
               ],
             ),
           ),
