@@ -1,4 +1,5 @@
 import 'package:agropro/pages/base/search/camera.dart';
+import 'package:agropro/pages/base/search/diagnose/disease_diagnosed.dart';
 import 'package:agropro/pages/base/search/plant_identification';
 import 'package:agropro/pages/base/search/search.dart';
 import 'package:agropro/pages/base/search/search_results.dart';
@@ -18,11 +19,13 @@ class Routers {
       case searchResultRoute:
         return MaterialPageRoute(builder: (_) => SearchResults());
       case diagnosisRoute:
-        return MaterialPageRoute(builder: (_) => const DiseaseDiagnosView());
+        return MaterialPageRoute(builder: (_) => DiseaseDiagnosView());
       case cameraRoute:
         return MaterialPageRoute(builder: (_) => Camera());
       case plantIdentityRoute:
         return MaterialPageRoute(builder: (_) => PlantIdentification());
+      case diseaseDiagonisRoute:
+        return MaterialPageRoute(builder: (_) => DiseaseDiagnosed());
 
       default:
         return MaterialPageRoute(

@@ -23,7 +23,7 @@ class MainNva extends StatelessWidget {
           const SizedBox(),
           const SizedBox(),
           Search(),
-          const DiseaseDiagnosView(),
+          DiseaseDiagnosView(),
           const SizedBox()
         ],
       ),

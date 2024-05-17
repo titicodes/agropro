@@ -50,12 +50,12 @@ class Search extends StatelessWidget {
                                                 horizontal: 15),
                                             child: Column(children: [
                                               const Gap(20),
-                                              Row(
+                                              const Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  const AppText(
+                                                  AppText(
                                                     'Complete identification',
                                                     size: 12,
                                                     isBold: true,
@@ -67,7 +67,7 @@ class Search extends StatelessWidget {
                                                   height: 145,
                                                   width: 300,
                                                   child: Image.file(image!, fit: BoxFit.cover,)),
-                                              Gap(15),
+                                              const Gap(15),
                                               const AppText(
                                                 'Please wait for a few minute after submission for the\nresults', weight: FontWeight.w400,
                                                 size: 11,
@@ -163,7 +163,7 @@ class Search extends StatelessWidget {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Gap(20),
+                                const Gap(20),
                                 InkWell(
                                   onTap: () {},
                                   child: CircleAvatar(
@@ -188,20 +188,20 @@ class Search extends StatelessWidget {
                         onTap: () {
                           showResults = true;
                         },
-                        child: AppText(
+                        child: const AppText(
                           'Previous results',
                           size: 12,
                           color: AppColor.green,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.arrow_forward_ios,
                         size: 12,
                         color: AppColor.green,
                       ),
                     ],
                   ),
-                  Gap(100),
+                  const Gap(100),
                   Column(
                     children: [
                       Padding(
@@ -232,10 +232,10 @@ class Search extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Gap(10),
+                      const Gap(10),
                       InkWell(
                         onTap: () {},
-                        child: Center(
+                        child: const Center(
                           child: AppText(
                             'Take snapshot',
                             isBold: true,

@@ -20,10 +20,6 @@ class SeeMore extends StatelessWidget {
 
   late final TextEditingController searchController = TextEditingController();
   bool showResults = false;
-
-
- 
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -33,11 +29,7 @@ class SeeMore extends StatelessWidget {
         body: SingleChildScrollView(
           child: Form(
             child: Padding(
-              padding: const EdgeInsets.only(
-                left: 15,
-                top: 40,
-                right: 20
-              ),
+              padding: const EdgeInsets.only(left: 15, top: 40, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -45,7 +37,6 @@ class SeeMore extends StatelessWidget {
                     children: [
                       Expanded(
                         child: AppInputField(
-                          
                           prefixIcon: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -57,25 +48,45 @@ class SeeMore extends StatelessWidget {
                           ),
                           controller: searchController,
                           hintText: 'Search plant by name',
+                          onChanged: (value) {
+                            context.read<SearchViewModel>().filterData(value);
+                          },
                         ),
                       ),
-                       InkWell(
-                                  onTap: () {},
-                                  child: CircleAvatar(
-                                    backgroundColor: AppColor.white,
-                                    radius: 20,
-                                    child: Image.asset(
-                                      AppImages.notifications,
-                                      height: 24,
-                                    ),
-                                  ),
-                                ),
-                     
+                      InkWell(
+                        onTap: () {},
+                        child: CircleAvatar(
+                          backgroundColor: AppColor.white,
+                          radius: 20,
+                          child: Image.asset(
+                            AppImages.notifications,
+                            height: 24,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                 
-                  Gap(100),
-                 
+                  const Gap(20),
+                  Consumer<SearchViewModel>(
+                    builder: (context, searchViewModel, child) {
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: searchViewModel.filteredData.length,
+                        itemBuilder: (context, index) {
+                          final disease = searchViewModel.filteredData[index];
+                          return ListTile(
+                            leading: Image.asset(
+                              disease.imageUrl ?? "image",
+                              width: 50,
+                              height: 50,
+                            ),
+                            title: Text(disease.name ?? "Abiotic"),
+                          );
+                        },
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

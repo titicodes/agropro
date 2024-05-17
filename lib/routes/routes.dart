@@ -4,5 +4,6 @@ const String diagnosisRoute = '/diagnosis_page';
 const String cameraRoute = '/camera_page';
 const String plantIdentityRoute = '/plant_identity_page';
 const String searchResultRoute = '/search_result_page';
-
-
+const String seemoreRoute = '/see_more_route';
+const String diseaseDiagonisRoute = '/disease_dignosis_page';
+const String forumRoutes = '/forum_page';
