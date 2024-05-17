@@ -1,3 +1,4 @@
+import 'package:agropro/pages/base/forum/forum_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar_item.dart';
@@ -20,7 +21,7 @@ class MainNva extends StatelessWidget {
       body: PageView(
         controller: _pageControlller,
         children: [
-          const SizedBox(),
+           Search(),
           const SizedBox(),
           Search(),
           const DiseaseDiagnosView(),

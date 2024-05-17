@@ -32,4 +32,6 @@ class AppImages {
   static const fungicides = 'assets/images/fungicides.png';
   static const plantrect2 = 'assets/images/plantrect2.png';
   static const cleantool = 'assets/images/cleantools.png';
+  static const forumbgplant = 'assets/images/forumbgplant.png';
+  static const anietieid = 'assets/images/anietieid.png';
 }

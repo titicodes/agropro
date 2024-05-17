@@ -1,3 +1,4 @@
+import 'package:agropro/pages/base/forum/forum_screen.dart';
 import 'package:agropro/pages/base/search/plant_identified2.dart';
 import 'package:agropro/utils/app_text.dart';
 import 'package:agropro/utils/main_nav.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
 
-      home: PlantIdentified2(),
+      home: MainNva(),
     );
   }
 }
