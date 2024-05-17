@@ -22,187 +22,192 @@ class ForumScreen extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => SearchViewModel(), // Provide the view model
       child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 40,
+          backgroundColor: AppColor.background,
+          title: AppText(
+
+            'Forum',
+            isBold: true,
+            size: 20,
+            color: AppColor.green,
+          ),
+          centerTitle: false,
+          automaticallyImplyLeading: false,
+        ),
         backgroundColor: AppColor.background,
-        body: SingleChildScrollView(
-          child: Form(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15, top: 40, right: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Row(
-                    children: [
-                      AppText(
-                        'Forum',
-                        isBold: true,
-                        size: 20,
-                        color: AppColor.green,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: List.generate(4, (index) {
-                      if (index % 2 == 0) {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 20, bottom: 10),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: AppColor.white,
-                                borderRadius: BorderRadius.circular(8)),
-                            width: MediaQuery.of(context).size.width,
-                            height: 365,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 20, bottom: 20),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 0),
-                                    child: ListTile(
-                                      leading: Image.asset(AppImages.anietieid,
-                                          height: 40),
-                                      title: const Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              AppText(
-                                                'Anietie Sampson',
-                                                isBold: true,
-                                                size: 12,
-                                              ),
-                                              AppText(
-                                                'Ikot Ekpene, AKS',
-                                                size: 11,
-                                              )
-                                            ],
-                                          ),
-                                          AppText(
-                                            '17 mins',
-                                            size: 11,
-                                          )
-                                        ],
-                                      ),
+        body: Form(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 15, top: 0, right: 15),
+            child: ListView(
+              padding: EdgeInsets.zero,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Row(
+                  children: [],
+                ),
+                Column(
+                  children: List.generate(4, (index) {
+                    if (index % 2 == 0) {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 20, bottom: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: AppColor.white,
+                              borderRadius: BorderRadius.circular(8)),
+                          width: MediaQuery.of(context).size.width,
+                          height: 365,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.only(top: 20, bottom: 20),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 0),
+                                  child: ListTile(
+                                    leading: Image.asset(AppImages.anietieid,
+                                        height: 40),
+                                    title: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            AppText(
+                                              'Anietie Sampson',
+                                              isBold: true,
+                                              size: 12,
+                                            ),
+                                            AppText(
+                                              'Ikot Ekpene, AKS',
+                                              size: 11,
+                                            )
+                                          ],
+                                        ),
+                                        AppText(
+                                          '17 mins',
+                                          size: 11,
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: AppText(
-                                      'Today, I woke to find out that the guava trees in my farm were infested with these. Can someone help me?',
-                                      weight: FontWeight.w500,
-                                      size: 14,
-                                    ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 10),
+                                  child: AppText(
+                                    'Today, I woke to find out that the guava trees in my farm were infested with these. Can someone help me?',
+                                    weight: FontWeight.w500,
+                                    size: 14,
                                   ),
-                                  const Gap(10),
-                                  Row(
-                                    children: List.generate(
-                                        2,
-                                        (index) => Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 7, right: 7),
-                                              child: Container(
-                                                height: 145,
-                                                width: 145,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8)),
-                                                child:
-                                                    Image.asset(aniimg[index]),
-                                              ),
-                                            )),
-                                  )
-                                ],
-                              ),
+                                ),
+                                const Gap(10),
+                                Row(
+                                  children: List.generate(
+                                      2,
+                                      (index) => Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 7, right: 7),
+                                            child: Container(
+                                              height: 145,
+                                              width: 145,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8)),
+                                              child:
+                                                  Image.asset(aniimg[index]),
+                                            ),
+                                          )),
+                                )
+                              ],
                             ),
                           ),
-                        );
-                      } else {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: AppColor.white,
-                                borderRadius: BorderRadius.circular(8)),
-                            width: MediaQuery.of(context).size.width,
-                            height: 365,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 20, bottom: 20),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 0),
-                                    child: ListTile(
-                                      leading: Image.asset(AppImages.sandra,
-                                          height: 40),
-                                      title: const Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              AppText(
-                                                'Anietie Sampson',
-                                                isBold: true,
-                                                size: 12,
-                                              ),
-                                              AppText(
-                                                'Ikot Ekpene, AKS',
-                                                size: 11,
-                                              )
-                                            ],
-                                          ),
-                                          AppText(
-                                            '17 mins',
-                                            size: 11,
-                                          )
-                                        ],
-                                      ),
+                        ),
+                      );
+                    } else {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: AppColor.white,
+                              borderRadius: BorderRadius.circular(8)),
+                          width: MediaQuery.of(context).size.width,
+                          height: 365,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.only(top: 20, bottom: 20),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 0),
+                                  child: ListTile(
+                                    leading: Image.asset(AppImages.sandra,
+                                        height: 40),
+                                    title: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            AppText(
+                                              'Anietie Sampson',
+                                              isBold: true,
+                                              size: 12,
+                                            ),
+                                            AppText(
+                                              'Ikot Ekpene, AKS',
+                                              size: 11,
+                                            )
+                                          ],
+                                        ),
+                                        AppText(
+                                          '17 mins',
+                                          size: 11,
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: AppText(
-                                      'Despite the heavy downpour lately that has made my beds to be waterlogged, my waterleaves still came out healthy.',
-                                      weight: FontWeight.w500,
-                                      size: 14,
-                                    ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 10),
+                                  child: AppText(
+                                    'Despite the heavy downpour lately that has made my beds to be waterlogged, my waterleaves still came out healthy.',
+                                    weight: FontWeight.w500,
+                                    size: 14,
                                   ),
-                                  const Gap(10),
-                                  Row(
-                                    children: List.generate(
-                                        2,
-                                        (index) => Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 7, right: 7),
-                                              child: Container(
-                                                height: 145,
-                                                width: 145,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8)),
-                                                child:
-                                                    Image.asset(aniimg[index]),
-                                              ),
-                                            )),
-                                  )
-                                ],
-                              ),
+                                ),
+                                const Gap(10),
+                                Row(
+                                  children: List.generate(
+                                      2,
+                                      (index) => Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 7, right: 7),
+                                            child: Container(
+                                              height: 145,
+                                              width: 145,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8)),
+                                              child:
+                                                  Image.asset(aniimg[index]),
+                                            ),
+                                          )),
+                                )
+                              ],
                             ),
                           ),
-                        );
-                      }
-                    }),
-                  )
-                ],
-              ),
+                        ),
+                      );
+                    }
+                  }),
+                )
+              ],
             ),
           ),
         ),

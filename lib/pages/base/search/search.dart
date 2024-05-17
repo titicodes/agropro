@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:agropro/pages/base/search/search_results.dart';
 import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:agropro/routes/routes.dart';
 import 'package:agropro/utils/app_buttons.dart';
@@ -187,7 +188,8 @@ class Search extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: () {
-                                showResults = true;
+                                   Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SearchResults()));
                               },
                               child: AppText(
                                 'Previous results',

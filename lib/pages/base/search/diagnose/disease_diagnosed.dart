@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
 class DiseaseDiagnosed extends StatelessWidget {
-  DiseaseDiagnosed({Key? key}) : super(key: key);
+  DiseaseDiagnosed(File? image, {Key? key}) : super(key: key);
 
   File? image;
   late final TextEditingController searchController = TextEditingController();
