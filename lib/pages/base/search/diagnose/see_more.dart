@@ -45,6 +45,7 @@ class SeeMore extends StatelessWidget {
                     children: [
                       Expanded(
                         child: AppInputField(
+                          
                           prefixIcon: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
