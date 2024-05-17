@@ -83,7 +83,7 @@ class ForumScreen extends StatelessWidget {
                                 color: AppColor.white,
                                 borderRadius: BorderRadius.circular(8)),
                             width: MediaQuery.of(context).size.width,
-                            height: 365, child: Padding(padding: EdgeInsets.only(left: 10, right: 10, top: 20),),
+                            height: 365, child: Padding(padding: EdgeInsets.only(left: 10, right: 10, top: 20), child: Column(),),
                           ),
                         );
                       }
