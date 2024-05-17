@@ -18,7 +18,7 @@ class Routers {
       case searchResultRoute:
         return MaterialPageRoute(builder: (_) => SearchResults());
       case diagnosisRoute:
-        return MaterialPageRoute(builder: (_) => const DiseaseDiagnosView());
+        return MaterialPageRoute(builder: (_) =>  DiseaseDiagnosView());
       case cameraRoute:
         return MaterialPageRoute(builder: (_) => Camera());
       case plantIdentityRoute:

@@ -37,4 +37,6 @@ class AppImages {
   static const guava1 = 'assets/images/guava1.png';
   static const guava2 = 'assets/images/guava2.png';
   static const sandra = 'assets/images/sandra.png';
+  static const checkPlant = 'assets/images/checkplant.png';
+  static const agrico = 'assets/images/agaricomycetes.png';
 }
