@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class AppInputField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
+
   final double height;
   final double borderWidth;
   final double borderRadius;
@@ -13,12 +14,14 @@ class AppInputField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool enabled;
+  final ValueChanged<String>? onChanged;
 
   const AppInputField({
     Key? key,
     required this.controller,
-     required this.hintText,
+    required this.hintText,
     this.height = 45,
+    this.onChanged,
     this.borderWidth = 1,
     this.borderRadius = 8,
     this.borderColor = AppColor.green,
@@ -32,11 +35,13 @@ class AppInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      decoration: BoxDecoration(color: AppColor.white,
+      decoration: BoxDecoration(
+        color: AppColor.white,
         borderRadius: BorderRadius.circular(borderRadius),
         border: Border.all(color: borderColor, width: borderWidth),
       ),
       child: TextField(
+        onChanged: onChanged,
         controller: controller,
         style: GoogleFonts.montserrat(fontSize: inputTextSize),
         enabled: enabled,
@@ -44,7 +49,7 @@ class AppInputField extends StatelessWidget {
           hintText: hintText,
           contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           border: InputBorder.none,
-          prefixIcon: prefixIcon, 
+          prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
         ),
       ),
