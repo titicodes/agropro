@@ -132,6 +132,19 @@ class BottomNavBarState extends State<BottomNavBar> {
                           index: 4,
                           onTap: handleItemSelected,
                         ),
+                        NavigationBarItem(
+                          label: "Market",
+                          icon: Image.asset(AppImages.diagnose,
+                              height: widget.selectedIndex == 5
+                                  ? 16.sp
+                                  : barIconHeight,
+                              color: widget.selectedIndex == 5
+                                  ? AppColor.green
+                                  : AppColor.grey),
+                          isSelected: (widget.selectedIndex == 5),
+                          index: 3,
+                          onTap: handleItemSelected,
+                        ),
                       ]),
                 ),
               ),
