@@ -1,7 +1,33 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SearchViewModel extends ChangeNotifier {
+import '../../../utils/app_images.dart';
+
+class SearchViewModel extends GetxController {
+
+  late final TextEditingController searchController = TextEditingController();
+  List<String> srchcategories = [
+    'Plant name',
+    'Disease detected',
+  ];
+  List<String> srcrestxt = [
+    'Roma tomatoes',
+    'Curly top',
+  ];
+  List<String> srchresimgs = [
+    AppImages.photodis1,
+    AppImages.photodis2,
+    AppImages.photodis3,
+    AppImages.photodis4
+  ];
+  List<String> possiblecureimg = [
+    AppImages.fungicides,
+    AppImages.insectcontrol,
+    AppImages.cleantool
+  ];
+  List<String> possiblecure = ['Fungicides', 'Insect control', 'Clean tools'];
   
-
+bool isLiked = false;
+bool isSaved = false;
 }

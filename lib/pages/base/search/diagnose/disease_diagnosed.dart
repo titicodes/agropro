@@ -6,6 +6,7 @@ import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
@@ -13,33 +14,12 @@ class DiseaseDiagnosed extends StatelessWidget {
   DiseaseDiagnosed(File? image, {Key? key}) : super(key: key);
 
   File? image;
-  late final TextEditingController searchController = TextEditingController();
-  List<String> srchcategories = [
-    'Plant name',
-    'Disease detected',
-  ];
-  List<String> srcrestxt = [
-    'Roma tomatoes',
-    'Curly top',
-  ];
-  List<String> srchresimgs = [
-    AppImages.photodis1,
-    AppImages.photodis2,
-    AppImages.photodis3,
-    AppImages.photodis4
-  ];
-  List<String> possiblecureimg = [
-    AppImages.fungicides,
-    AppImages.insectcontrol,
-    AppImages.cleantool
-  ];
-  List<String> possiblecure = ['Fungicides', 'Insect control', 'Clean tools'];
+
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => SearchViewModel(), // Provide the view model
-      child: Scaffold(
+    return GetBuilder<SearchViewModel>(
+      builder: (model) =>  Scaffold(
         body: SingleChildScrollView(
           child: Form(
             child: Stack(
@@ -102,7 +82,7 @@ class DiseaseDiagnosed extends StatelessWidget {
                                                 Container(
                                                   width: 150,
                                                   child: AppText(
-                                                    srchcategories[index],
+                                                    model.srchcategories[index],
                                                     weight: FontWeight.w500,
                                                   ),
                                                 ),
@@ -110,7 +90,7 @@ class DiseaseDiagnosed extends StatelessWidget {
                                                     alignment:
                                                         const Alignment(173, 0),
                                                     child: AppText(
-                                                        srcrestxt[index]))
+                                                        model.srcrestxt[index]))
                                               ],
                                             ),
                                           ),
@@ -160,7 +140,7 @@ class DiseaseDiagnosed extends StatelessWidget {
                                                     height: 100,
                                                     width: 105,
                                                     child: Image.asset(
-                                                      srchresimgs[index],
+                                                      model.srchresimgs[index],
                                                       fit: BoxFit.cover,
                                                     ),
                                                   ),
@@ -201,12 +181,12 @@ class DiseaseDiagnosed extends StatelessWidget {
                                               child: CircleAvatar(
                                                 radius: 46,
                                                 child: Image.asset(
-                                                    possiblecureimg[index]),
+                                                    model.possiblecureimg[index]),
                                               ),
                                             ),
                                             const Gap(10),
                                             AppText(
-                                              possiblecure[index],
+                                              model.possiblecure[index],
                                               weight: FontWeight.w700,
                                               size: 11,
                                             ),

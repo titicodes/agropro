@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:agropro/pages/base/search/plant_identification';
 import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
@@ -9,6 +7,7 @@ import 'package:agropro/utils/constants.dart';
 import 'package:agropro/utils/input.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -26,9 +25,9 @@ class SeeMore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => SearchViewModel(), // Provide the view model
-      child: Scaffold(
+    return GetBuilder<SearchViewModel>(
+      builder: (model) =>  // Provide the view model
+       Scaffold(
         backgroundColor: AppColor.background,
         body: SingleChildScrollView(
           child: Form(
