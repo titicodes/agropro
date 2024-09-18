@@ -6,7 +6,6 @@ import 'package:agropro/pages/home/dashboard/dashboard.dart';
 import 'package:agropro/pages/home/diagnose_view.dart';
 import 'package:flutter/material.dart';
 
-import '../utils/main_nav.dart';
 import 'routes.dart';
 
 class Routers {

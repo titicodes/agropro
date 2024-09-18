@@ -7,7 +7,6 @@ import 'package:agropro/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
-import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
 class DiseaseDiagnosed extends StatelessWidget {

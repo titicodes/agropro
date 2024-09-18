@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../base/forum/forum_screen.dart';
-import '../../base/search/plant_identified2.dart';
 import '../../base/search/search_results.dart';
 
 

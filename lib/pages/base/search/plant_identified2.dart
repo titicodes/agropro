@@ -8,7 +8,6 @@ import 'package:agropro/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
 class PlantIdentified2 extends StatelessWidget {
