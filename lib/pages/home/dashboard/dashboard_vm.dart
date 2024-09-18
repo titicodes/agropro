@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import '../../base/forum/forum_screen.dart';
 import '../../base/search/plant_identified2.dart';
 import '../../base/search/search_results.dart';
+import '../diagnose_view.dart';
 
 
 class BottomNavViewModel extends GetxController {
@@ -27,7 +28,7 @@ class BottomNavViewModel extends GetxController {
     ForumScreen(),
     SearchResults(),
     Search(),
-    SearchResults(),
+    DiseaseDiagnosView(),
     Profiles(),
 
   ];

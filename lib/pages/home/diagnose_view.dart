@@ -73,6 +73,8 @@ class DiseaseDiagnosView extends StatelessWidget {
                             AppButton(
                               title: 'Identify',
                               onPressed: () {
+                                Navigator.pop(context);
+                                Navigator.pop(context);
                                 Navigator.push(context,
                 MaterialPageRoute(builder: (context) => DiseaseDiagnosed(this.image)));
                               },
