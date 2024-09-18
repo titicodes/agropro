@@ -7,6 +7,7 @@ import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
@@ -36,9 +37,8 @@ class PlantIdentified2 extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => SearchViewModel(), // Provide the view model
-      child: Scaffold(
+    return GetBuilder<SearchViewModel>(
+      builder: (model)=> Scaffold(
         body: SingleChildScrollView(
           child: Form(
             child: Stack(

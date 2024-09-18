@@ -34,9 +34,16 @@ class AppImages {
   static const cleantool = 'assets/images/cleantools.png';
   static const forumbgplant = 'assets/images/forumbgplant.png';
   static const anietieid = 'assets/images/anietieid.png';
+  static const saved = 'assets/images/saved.png';
+  static const waterleaf = 'assets/images/waterleaf.png';
   static const guava1 = 'assets/images/guava1.png';
   static const guava2 = 'assets/images/guava2.png';
   static const sandra = 'assets/images/sandra.png';
   static const checkPlant = 'assets/images/checkplant.png';
   static const agrico = 'assets/images/agaricomycetes.png';
+  static const forum = 'assets/images/forum.png';
+  static const myFarm = 'assets/images/myFarm.png';
+  static const identify = 'assets/images/identify.png';
+  static const diagnose = 'assets/images/diagnose.png';
+  static const profile = 'assets/images/profile.png';
 }

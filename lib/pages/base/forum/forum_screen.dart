@@ -4,8 +4,11 @@ import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
@@ -16,16 +19,19 @@ class ForumScreen extends StatelessWidget {
   late final TextEditingController searchController = TextEditingController();
   bool showResults = false;
   List<String> aniimg = [AppImages.guava1, AppImages.guava2];
+  int likes = 5;
 
   @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => SearchViewModel(), // Provide the view model
-      child: Scaffold(
+  Widget build(BuildContext context) =>
+     GetBuilder<SearchViewModel>(
+        builder: (model) =>
+    // Provide the view model
+       Scaffold(
         appBar: AppBar(
           toolbarHeight: 40,
           backgroundColor: AppColor.background,
           title: AppText(
+            
 
             'Forum',
             isBold: true,
@@ -181,23 +187,29 @@ class ForumScreen extends StatelessWidget {
                                   ),
                                 ),
                                 const Gap(10),
-                                Row(
-                                  children: List.generate(
-                                      2,
-                                      (index) => Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 7, right: 7),
-                                            child: Container(
-                                              height: 145,
-                                              width: 145,
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8)),
-                                              child:
-                                                  Image.asset(aniimg[index]),
-                                            ),
-                                          )),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.sp),
+                                child: Image.asset(AppImages.waterleaf),
+                              ),
+                                Gap(10.sp),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10.sp),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [Row(children: [InkWell(onTap: (){
+                                    model.isLiked = !model.isLiked;
+                                    model.isLiked ? likes++: likes --;
+                                    model.update();
+                                  },
+                                      child: Icon(Icons.favorite, color: model.isLiked? AppColor.green: AppColor.grey)),
+                                    Gap(5.sp),
+                                    AppText('${likes}'),Gap(10.sp),
+                                    Icon(Icons.comment, color: AppColor.grey,),
+                                  Gap(5.sp),
+                                  AppText('17')],),
+                                  InkWell(onTap: (){
+                                    model.isSaved = !model.isSaved;
+                                    model.update();
+                                  },child: Image.asset(AppImages.saved, color: model.isSaved? AppColor.green: AppColor.grey,))],),
                                 )
                               ],
                             ),
@@ -206,12 +218,12 @@ class ForumScreen extends StatelessWidget {
                       );
                     }
                   }),
-                )
+                ),
+                Gap(20.sp)
               ],
             ),
           ),
         ),
       ),
-    );
-  }
+  );
 }
