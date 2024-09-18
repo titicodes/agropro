@@ -126,6 +126,26 @@ class ForumScreen extends StatelessWidget {
                                                   Image.asset(aniimg[index]),
                                             ),
                                           )),
+                                ),
+                                Gap(10.sp),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10.sp),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [Row(children: [InkWell(onTap: (){
+                                      model.isLiked = !model.isLiked;
+                                      model.isLiked ? likes++: likes --;
+                                      model.update();
+                                    },
+                                        child: Icon(Icons.favorite, color: model.isLiked? AppColor.green: AppColor.grey)),
+                                      Gap(5.sp),
+                                      AppText('${likes}'),Gap(10.sp),
+                                      Icon(Icons.comment, color: AppColor.grey,),
+                                      Gap(5.sp),
+                                      AppText('17')],),
+                                      InkWell(onTap: (){
+                                        model.isSaved = !model.isSaved;
+                                        model.update();
+                                      },child: Image.asset(AppImages.saved, color: model.isSaved? AppColor.green: AppColor.grey,))],),
                                 )
                               ],
                             ),

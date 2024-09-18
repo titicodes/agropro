@@ -79,7 +79,7 @@ class SearchResults extends StatelessWidget {
                                 Navigator.pop(context);
                                 Navigator.push(
                                     context, MaterialPageRoute(builder: (context) => PlantIdentified2()));
-                               Get.to(() => PlantIdentified2());
+
                               },
                               width: 205,
                             ),
