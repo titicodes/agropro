@@ -27,6 +27,9 @@ class SearchViewModel extends GetxController {
     AppImages.cleantool
   ];
   List<String> possiblecure = ['Fungicides', 'Insect control', 'Clean tools'];
+  List<String> settings = ['Change language', 'Notifications', 'Planting guide'];
+  List<String> support = ['About Agripro', 'Help Center', 'Terms and Privacy'];
+
   
 bool isLiked = false;
 bool isSaved = false;
