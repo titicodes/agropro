@@ -1,6 +1,8 @@
 import 'package:agropro/pages/base/search/search_vm.dart';
 import 'package:agropro/pages/home/dashboard/dashboard.dart';
 import 'package:agropro/pages/home/dashboard/dashboard_vm.dart';
+import 'package:agropro/pages/market/controller/cart_controller.dart';
+import 'package:agropro/pages/market/controller/marker_controller.dart';
 import 'package:agropro/utils/app_text.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -30,12 +32,13 @@ void main() async {
 
   runApp(const MyApp());
 }
-Future<void> _initPreAppServices () async{
+
+Future<void> _initPreAppServices() async {
   Get.put(BottomNavViewModel(), permanent: true);
   Get.put(SearchViewModel(), permanent: true);
-
+  Get.put(MarketplaceController(), permanent: true);
+  Get.put(CartController(), permanent: true);
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -1,5 +1,6 @@
 import 'package:agropro/pages/base/search/search.dart';
 import 'package:agropro/pages/home/widgets/profiles.dart';
+import 'package:agropro/pages/market/market_plaes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -28,6 +29,7 @@ class BottomNavViewModel extends GetxController {
     Search(),
     SearchResults(),
     Profiles(),
+    MarketPlacesView()
 
   ];
 
