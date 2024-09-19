@@ -12,6 +12,8 @@ import 'package:get_storage/get_storage.dart';
 
 import 'firebase_options.dart';
 import 'locator.dart';
+import 'pages/market/controller/order_controller.dart';
+import 'pages/market/controller/payment_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +23,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+   Get.put(OrderController()); 
 
   //initialise local storage
   await GetStorage.init();
@@ -38,6 +41,8 @@ Future<void> _initPreAppServices() async {
   Get.put(SearchViewModel(), permanent: true);
   Get.put(MarketplaceController(), permanent: true);
   Get.put(CartController(), permanent: true);
+  Get.put(OrderController(), permanent: true);
+  Get.put(PaymentController(), permanent: true);
 }
 
 class MyApp extends StatelessWidget {

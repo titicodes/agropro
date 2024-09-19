@@ -1,0 +1,35 @@
+[
+    {
+      "id": "1",
+      "name": "Tomato",
+      "price": 5.0,
+      "description": "Fresh tomatoes",
+      "imageUrl": "assets/images/tomato.png",
+      "category": "Vegetables"  
+    },
+    {
+      "id": "2",
+      "name": "Cucumber",
+      "price": 3.0,
+      "description": "Crispy cucumbers",
+      "imageUrl": "assets/images/cucumber.png",
+      "category": "Vegetables" 
+    },
+    {
+      "id": "3",
+      "name": "Apple",
+      "price": 2.5,
+      "description": "Sweet apples",
+      "imageUrl": "assets/images/apple.png",
+      "category": "Fruits"  
+    },
+    {
+      "id": "4",
+      "name": "Banana",
+      "price": 1.5,
+      "description": "Ripe bananas",
+      "imageUrl": "assets/images/banana.png",
+      "category": "Fruits"  
+    }
+  ]
+  

@@ -1,6 +1,7 @@
-import 'package:agropro/pages/market/controller/cart_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'controller/cart_controller.dart';
+import 'place_order_screen.dart'; 
 
 class CartScreen extends StatelessWidget {
   @override
@@ -20,20 +21,28 @@ class CartScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     var product = controller.cartItems[index];
                     return Card(
-                      margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                      margin:
+                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                       child: ListTile(
                         leading: Image.network(product['image_url']),
                         title: Text(product['name']),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('\$${product['price']}', style: TextStyle(fontSize: 16.0, color: Colors.green)),
-                            SizedBox(height: 4.0), // Space between price and description
                             Text(
-                              product['description'], // Add product description
-                              maxLines: 2, // Limit to 2 lines
+                              '\$${product['price']}',
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Colors.green),
+                            ),
+                            SizedBox(
+                                height:
+                                    4.0), 
+                            Text(
+                              product['description'], 
+                              maxLines: 2, 
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
+                              style: TextStyle(
+                                  fontSize: 14.0, color: Colors.grey[600]),
                             ),
                           ],
                         ),
@@ -57,7 +66,16 @@ class CartScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  controller.checkout();
+                  // Navigate to the PlaceOrderScreen
+                  Get.to(() => PlaceOrderScreen());
+                },
+                child: Text('Place Order'),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  controller
+                      .checkout(); // Checkout button will simulate payment
                 },
                 child: Text('Checkout'),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.green),

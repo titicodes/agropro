@@ -1,9 +1,12 @@
-import 'package:agropro/pages/market/product_detail.dart';
+import 'package:agropro/data/model/products.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../product_detail.dart';
+
 class ProductTile extends StatelessWidget {
-  final product;
+  final Product product;
+
   ProductTile({required this.product});
 
   @override
@@ -18,31 +21,31 @@ class ProductTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Image.network(
-                product['image_url'], // Product image URL from Firestore
+              child: Image.asset(
+                product.imageUrl, // Use local asset path
                 fit: BoxFit.cover,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                product['name'],
+                product.name,
                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                '\$${product['price']}',
+                '\$${product.price}',
                 style: TextStyle(fontSize: 16.0, color: Colors.green),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                product['description'], // Add product description
-                maxLines: 2, // Limit the description to 2 lines
-                overflow: TextOverflow.ellipsis, // Ellipsis for overflow
+                product.description,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
               ),
             ),

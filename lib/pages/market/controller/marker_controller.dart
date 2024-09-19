@@ -1,8 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:agropro/data/model/products.dart';
+import 'package:agropro/data/services/market_place_service.dart';
 import 'package:get/get.dart';
 
 class MarketplaceController extends GetxController {
-  var products = <Map<String, dynamic>>[].obs; // List of products
+  var products = <Product>[].obs; // List of products using Product model
   var isLoading = true.obs; // Loading state
   var selectedCategory = 'All'.obs; // The selected category
 
@@ -12,20 +13,16 @@ class MarketplaceController extends GetxController {
     super.onInit();
   }
 
-  // Fetch products from Firestore based on selected category
+  // Fetch products from the local JSON file based on selected category
   void fetchProducts() async {
     isLoading(true); // Set loading state to true
     try {
-      QuerySnapshot snapshot;
+      var fetchedProducts = await MarketplaceService().fetchProducts();
       if (selectedCategory.value == 'All') {
-        snapshot = await FirebaseFirestore.instance.collection('products').get();
+        products.assignAll(fetchedProducts);
       } else {
-        snapshot = await FirebaseFirestore.instance
-            .collection('products')
-            .where('category', isEqualTo: selectedCategory.value)
-            .get();
+        products.assignAll(fetchedProducts.where((product) => product.category == selectedCategory.value).toList());
       }
-      products.value = snapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
     } catch (e) {
       print("Error fetching products: $e");
     } finally {
