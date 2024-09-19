@@ -3,19 +3,16 @@ import 'dart:io';
 import 'package:agropro/pages/base/search/plant_identified2.dart';
 import 'package:agropro/pages/base/search/search_results.dart';
 import 'package:agropro/pages/base/search/search_vm.dart';
-import 'package:agropro/routes/routes.dart';
 import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
 import 'package:agropro/utils/input.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:provider/provider.dart';
 // Import your SearchViewModel class
 
 class Search extends StatelessWidget {

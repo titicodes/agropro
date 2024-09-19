@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,42 +41,54 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAiDmj3GG9xtHiyIk6VyRt16php4tIO8IU',
-    appId: '1:631335126066:web:f02c47f026c0769700e82b',
-    messagingSenderId: '631335126066',
-    projectId: 'macwin-6956b',
-    authDomain: 'macwin-6956b.firebaseapp.com',
-    storageBucket: 'macwin-6956b.appspot.com',
-    measurementId: 'G-7NNMCQW11P',
+    apiKey: 'AIzaSyA9usfqNYsg7OOZjIfANMGwc8z_xGJIIs8',
+    appId: '1:811294422460:web:8ec406963bc830133b67b9',
+    messagingSenderId: '811294422460',
+    projectId: 'agricpro-connect',
+    authDomain: 'agricpro-connect.firebaseapp.com',
+    databaseURL: 'https://agricpro-connect-default-rtdb.firebaseio.com',
+    storageBucket: 'agricpro-connect.appspot.com',
+    measurementId: 'G-20E07RK69E',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCDvjq22v8EY0gwnBsVsaVtw7cNX3Dl9lE',
-    appId: '1:631335126066:android:eef5f96a4dbb040700e82b',
-    messagingSenderId: '631335126066',
-    projectId: 'macwin-6956b',
-    storageBucket: 'macwin-6956b.appspot.com',
+    apiKey: 'AIzaSyC1cXoLhg4itFFv9kh334HjKy2JT0VUsMw',
+    appId: '1:811294422460:android:58b3abf0584052183b67b9',
+    messagingSenderId: '811294422460',
+    projectId: 'agricpro-connect',
+    databaseURL: 'https://agricpro-connect-default-rtdb.firebaseio.com',
+    storageBucket: 'agricpro-connect.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCOgv4oLc9FSdzkPxdOiYNAFon-712sjXc',
-    appId: '1:631335126066:ios:03142103a1945c0400e82b',
-    messagingSenderId: '631335126066',
-    projectId: 'macwin-6956b',
-    storageBucket: 'macwin-6956b.appspot.com',
-    androidClientId: '631335126066-cq1hh83sr1mlbh6p1q65pnmdjk1sj76o.apps.googleusercontent.com',
-    iosClientId: '631335126066-5pi1i8830polc23b9rm7e95o35olg5f3.apps.googleusercontent.com',
-    iosBundleId: 'com.app.macwin',
+    apiKey: 'AIzaSyApc3-QEwk3Dk9oKKgeVnqs24H7zgAmqJc',
+    appId: '1:811294422460:ios:f92cbefaff6ba6c83b67b9',
+    messagingSenderId: '811294422460',
+    projectId: 'agricpro-connect',
+    databaseURL: 'https://agricpro-connect-default-rtdb.firebaseio.com',
+    storageBucket: 'agricpro-connect.appspot.com',
+    iosBundleId: 'com.example.agropro',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCOgv4oLc9FSdzkPxdOiYNAFon-712sjXc',
-    appId: '1:631335126066:ios:50c7e4f56d2f61fe00e82b',
-    messagingSenderId: '631335126066',
-    projectId: 'macwin-6956b',
-    storageBucket: 'macwin-6956b.appspot.com',
-    androidClientId: '631335126066-cq1hh83sr1mlbh6p1q65pnmdjk1sj76o.apps.googleusercontent.com',
-    iosClientId: '631335126066-3rmipeum0vgm117msgp17g5o36ecvs93.apps.googleusercontent.com',
-    iosBundleId: 'com.app.macwin.RunnerTests',
+    apiKey: 'AIzaSyApc3-QEwk3Dk9oKKgeVnqs24H7zgAmqJc',
+    appId: '1:811294422460:ios:f92cbefaff6ba6c83b67b9',
+    messagingSenderId: '811294422460',
+    projectId: 'agricpro-connect',
+    databaseURL: 'https://agricpro-connect-default-rtdb.firebaseio.com',
+    storageBucket: 'agricpro-connect.appspot.com',
+    iosBundleId: 'com.example.agropro',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyA9usfqNYsg7OOZjIfANMGwc8z_xGJIIs8',
+    appId: '1:811294422460:web:977792f0ea9a6c313b67b9',
+    messagingSenderId: '811294422460',
+    projectId: 'agricpro-connect',
+    authDomain: 'agricpro-connect.firebaseapp.com',
+    databaseURL: 'https://agricpro-connect-default-rtdb.firebaseio.com',
+    storageBucket: 'agricpro-connect.appspot.com',
+    measurementId: 'G-6CVYGJWRQ9',
+  );
+
 }

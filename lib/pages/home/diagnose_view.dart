@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:agropro/pages/base/search/diagnose/disease_diagnosed.dart';
 import 'package:agropro/pages/base/search/search.dart';
 import 'package:agropro/pages/base/search/search_results.dart';
-import 'package:agropro/routes/routes.dart';
 import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';

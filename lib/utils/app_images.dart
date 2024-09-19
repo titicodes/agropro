@@ -46,4 +46,5 @@ class AppImages {
   static const identify = 'assets/images/identify.png';
   static const diagnose = 'assets/images/diagnose.png';
   static const profile = 'assets/images/profile.png';
+  
 }

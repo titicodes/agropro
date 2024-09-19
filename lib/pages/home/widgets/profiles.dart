@@ -1,17 +1,12 @@
 import 'dart:io';
 import 'package:agropro/pages/base/search/search_vm.dart';
-import 'package:agropro/utils/app_buttons.dart';
 import 'package:agropro/utils/app_color.dart';
 import 'package:agropro/utils/app_images.dart';
 import 'package:agropro/utils/constants.dart';
-import 'package:agropro/utils/input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:provider/provider.dart';
 
 import '../../../utils/widget_extensions.dart';
 // Import your SearchViewModel class
