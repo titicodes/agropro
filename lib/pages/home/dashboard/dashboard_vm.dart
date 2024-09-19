@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 
 import '../../base/forum/forum_screen.dart';
 import '../../base/search/search_results.dart';
+import '../diagnose_view.dart';
 
 class BottomNavViewModel extends GetxController {
   static BottomNavViewModel get find => Get.find();
@@ -29,7 +30,7 @@ class BottomNavViewModel extends GetxController {
     ForumScreen(),
     SearchResults(),
     Search(),
-    SearchResults(),
+    DiseaseDiagnosView(),
     Profiles(),
     MarketPlacesView(),
     PaymentScreen(), // Add your Payment screen here
