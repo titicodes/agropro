@@ -1,4 +1,3 @@
-import 'package:bucx/domain/model/users.dart';
 
 class AuthResponse {
   final bool isSuccessful;

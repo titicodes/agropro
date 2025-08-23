@@ -1,10 +1,10 @@
-import 'package:bucx/utils/pallet.dart';
-import 'package:bucx/utils/widget_extensions.dart';
+import 'package:agropro/utils/widget_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
+import 'app_color.dart';
 import 'constants.dart';
 import 'font_manager.dart';
 
