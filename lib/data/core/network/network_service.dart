@@ -2,8 +2,9 @@ import 'dart:async';
 import 'dart:developer' as AppUtility;
 import 'dart:io';
 
-import 'package:bucx/utils/snack_message.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+
+import '../../../utils/snack_message.dart';
 
 class NetworkController {
   NetworkController._internal();
