@@ -22,3 +22,7 @@ class UrlPath {
   static const user = "/user/account/profile";
   static const changePassword = "/user/account/changePassword";
 }
+
+class Config {
+  static const BASEURL = 'https://agric-ecommerce.onrender.com/api/';
+}
